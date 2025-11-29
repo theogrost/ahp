@@ -208,7 +208,7 @@ shinyServer(function(input, output, session) {
                          choices = c("Total", decisionMakers), 
                          selected = ifelse(is.null(input$decisionMaker), yes = "Total", no = input$decisionMaker))
           })
-          show(id = "decisionMaker", anim = TRUE)
+          shinyjs::show(id = "decisionMaker", anim = TRUE)
           sel <- ifelse(length(input$sort) > 0, input$sort, "Total Priority")
           #browser()
           updateRadioButtons(session, "sort", choices = c("Total Priority", "Priority", "Original"), selected = sel)
